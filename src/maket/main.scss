@@ -1,0 +1,56 @@
+@import '../css/variables';
+@import '../css/null';
+
+// App.vue
+#app {
+  height: 100%;
+}
+
+.stretch {
+  height: calc(100% - 60px);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+// демо app .vue - разместить 2 мессенджера
+.messenger-demo {
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+// Messenger.vue
+@import '../components/messenger/css/messenger';
+
+// MessengerPanel.vue
+@import '../components/messenger/css/messenger-panel';
+
+// MessengerContacts.vue
+@import '../components/messenger/css/messenger-contacts';
+
+// MessengerChat.vue
+@import '../components/messenger/css/messenger-chat';
+
+// Avatar.vue
+@import '../components/messenger/css/avatar';
+
+
+// дебаг
+//$debug: true;
+
+.messenger,
+  // ,.messenger-panel,
+  // .messenger-panel__use
+  // .messenger-panel__chat
+  //  .messenger-contacts
+.messenger-chat__form
+//,.messenger-chat
+{
+  @include d(blue);
+}
+
+.messenger-demo {
+  // @include d(green);
+}

@@ -1,0 +1,63 @@
+// сайдбар контакты
+.messenger-contacts {
+  flex: 1 1 30%;
+  min-width: 270px;
+
+  background-color: lighten($panelBgColor, 5%);
+  border-right: 1px solid darken($panelBgColor, 40%);
+
+  &__list { // ul
+  }
+
+  &__item { // li
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 8px 15px 8px 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    & > .title {
+      margin: 0 5px;
+    }
+
+    // разделитель
+    &:not(:first-child):not(.selected):after {
+      content: '';
+      width: calc(100% - 60px);
+      height: 1px;
+      background-color: darken($panelBgColor, 10%);
+
+      position: absolute;
+      top: -1px;
+      right: 5px;
+    }
+
+    // активный
+    &.selected {
+      background-color: darken($panelBgColor, 10%);
+    }
+
+    // наведение
+    transition: all 0.1s;
+
+    &:hover {
+      background-color: darken($panelBgColor, 5%);
+    }
+  }
+
+  // узкий экран
+  @media screen and (max-width: $small) {
+    // background-color: red;
+    &.active {
+    }
+    &:not(.active) {
+      display: none;
+    }
+  }
+}
