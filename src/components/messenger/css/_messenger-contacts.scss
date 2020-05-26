@@ -52,12 +52,19 @@
   }
 
   // узкий экран
-  @media screen and (max-width: $small) {
-    // background-color: red;
+  @mixin small {
     &.active {
     }
     &:not(.active) {
       display: none;
     }
+  }
+
+  @media screen and (max-width: $small) {
+    @include  small;
+  }
+
+  .small & {
+    @include  small;
   }
 }

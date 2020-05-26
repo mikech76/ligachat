@@ -2,16 +2,19 @@ $minwidth: 320px;
 $fontsize: 12px;
 $fontfamily: Arial, sans-serif;
 
+// логин панель
+$loginPanelBgColor: #d2b48c;
 // messenger-panel
 $panelBgColor: rgb(237, 237, 237);
 
 // брекпоинты
 $small: 540px;
-$small: 700px;
+//$small: 700px;
 
 // цвета сообщений
 
 $messageOutColor: rgb(220, 248, 198);
 $messageInColor: rgb(250, 250, 250);
+$messageSystemColor: rgba(255, 245, 196, 0.95);
 
 $messageFontSize: 15px;

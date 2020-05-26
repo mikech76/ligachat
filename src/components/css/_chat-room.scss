@@ -1,0 +1,10 @@
+// демо   - разместить 2 мессенджера (или больше))
+
+.chat-room {
+  flex: 1 1 auto;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+

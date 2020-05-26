@@ -21,7 +21,6 @@
     min-width: 270px;
 
     border-right: 1px solid darken($panelBgColor, 40%);
-    //transition: all 0.1s;
   }
 
   // вкладка чата
@@ -32,7 +31,6 @@
     flex: 1 1 70%;
 
     justify-content: flex-end;
-    //transition: all 0.1s;
   }
 
   // заголовки панели
@@ -43,10 +41,27 @@
     font-weight: 500;
   }
 
-  // узкий экран
-  @media screen and (max-width: $small) {
-    //background-color: red;
+  // кнопка Закрыть чат
+  & .close {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
 
+    justify-content: flex-end;
+
+    button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+
+      color: red;
+      font-size: 20px;
+      vertical-align: center;
+    }
+  }
+
+  // узкий экран
+  @mixin small {
     &__list.active {
       border-top-left-radius: 20px 15px;
       border-top-right-radius: 20px 15px;
@@ -78,4 +93,13 @@
       }
     }
   }
+
+  @media screen and (max-width: $small) {
+    @include small;
+  }
+
+  .small & {
+    @include small;
+  }
+
 }

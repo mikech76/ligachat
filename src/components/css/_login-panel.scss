@@ -1,0 +1,39 @@
+// панель добавления юзера
+.login-panel {
+  flex: 0 1 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: $loginPanelBgColor;
+  border: 1px solid darken($loginPanelBgColor, 40%);
+
+  font-weight: 500;
+
+  margin: 0 4px;
+  padding: 0 4px;
+  min-height: 50px;
+
+  &__btn {
+    border: 1px solid darken($loginPanelBgColor, 40%);
+
+    height: 23px;
+    padding: 0 10px;
+  }
+
+  &__url {
+    width: 200px;
+  }
+
+  label, button {
+    margin: 0 5px 0 15px;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+
+  input {
+    height: 23px;
+    padding: 3px;
+    border-radius: 5px;
+  }
+}

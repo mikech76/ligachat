@@ -14,10 +14,11 @@
     flex-direction: column;
     justify-content: flex-end;
 
-    background: url('../assets/img/bg-chat.jpg') repeat fixed;
-    background-size: 200px 200px;
+    // background: url('../assets/img/bg-chat.jpg') repeat fixed;
+    // background-size: 200px 200px;
+    background-image: linear-gradient(to top right, rgb(226, 227, 240), rgb(226, 223, 236), rgb(226, 220, 232), rgb(227, 216, 228), rgb(227, 213, 224), rgb(227, 209, 220), rgb(225, 213, 222), rgb(223, 217, 223), rgb(221, 221, 225), rgb(218, 224, 227), rgb(216, 228, 228), rgb(214, 232, 230));
 
-    .message-in, .message-out {
+    .message-in, .message-out, .message-system {
       margin-bottom: 12px;
       display: flex;
 
@@ -85,9 +86,19 @@
       }
     }
 
+    .message-system { // системные
+      justify-content: center;
 
+      .message__block {
+        background-color: $messageSystemColor;
+        border: 1px solid darken($messageSystemColor, 20%);
+        text-align: center;
+        font-size: 1.4em;
+      }
+    }
   }
 
+  // форма отправки
   &__form {
     flex: 0 0 auto;
     display: flex;
@@ -110,7 +121,7 @@
   &__send {
     background-color: lighten(#00b0e8, 40%);
 
-    height: 90%;
+    height: 85px;
     margin: 0 10px 0 0;
     padding: 0 5px;
     border-radius: 5px;
@@ -123,13 +134,19 @@
   }
 
   // узкий экран
-  @media screen and (max-width: $small) {
-    // background-color: red;
-
+  @mixin small {
     &.active {
     }
     &:not(.active) {
       display: none;
     }
+  }
+
+  @media screen and (max-width: $small) {
+    @include small;
+  }
+
+  .small & {
+    @include small;
   }
 }

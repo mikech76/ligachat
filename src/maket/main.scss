@@ -2,24 +2,32 @@
 @import '../css/null';
 
 // App.vue
+
 #app {
   height: 100%;
+
+  .column {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
-.stretch {
+.stretch2 {
   height: calc(100% - 60px);
 
   display: flex;
   justify-content: space-between;
 }
 
-// демо app .vue - разместить 2 мессенджера
-.messenger-demo {
-  height: 100%;
 
-  display: flex;
-  justify-content: space-between;
-}
+// ChatRoom.vue
+@import '../components/css/chat-room';
+
+// LoginPanel.vue
+@import '../components/css/login-panel';
 
 // Messenger.vue
 @import '../components/messenger/css/messenger';
@@ -46,7 +54,7 @@
   // .messenger-panel__chat
   //  .messenger-contacts
 .messenger-chat__form
-//,.messenger-chat
+  //,.messenger-chat
 {
   @include d(blue);
 }
@@ -54,3 +62,4 @@
 .messenger-demo {
   // @include d(green);
 }
+

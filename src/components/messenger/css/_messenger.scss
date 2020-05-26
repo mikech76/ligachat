@@ -1,13 +1,16 @@
 // окно месенджера
 
 .messenger {
+  flex: 1 1 40%;
   width: 100%;
+  margin: 4px;
+  border: 1px solid darken($panelBgColor, 60%);
 
-  &-contacts {
+  .stretch {
+    height: calc(100% - 60px);
 
+    display: flex;
+    justify-content: space-between;
   }
 
-  &-chat {
-
-  }
 }
