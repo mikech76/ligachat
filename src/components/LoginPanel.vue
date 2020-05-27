@@ -1,17 +1,22 @@
 <template>
+  <div class="login-panel" :class="burger?'active':''">
 
-  <div class="login-panel">
+    <div @click="burger= !burger"
+         class="login-panel__burger"
+         :class="burger?'active':''"
+    ><span></span>
+    </div>
 
-    <div class="col">
+    <div class="item">
       <label>Имя:</label>
       <input v-model.trim="name"
              type="text"
              class="login-panel__name"
-             placeholder=""
       >
     </div>
-    <div class="col">
-      <label>URL: </label>
+
+    <div class="item">
+      <label>url: </label>
       <input v-model.trim="url"
              type="text"
              class="login-panel__url"
@@ -20,17 +25,14 @@
       >
     </div>
 
-    <button @click.stop="onAutoAvatar" class="login-panel__btn ">
-      авто
-    </button>
+    <div class="item">
+      <button @click.stop="onAdd" class="login-panel__btn ">Добавить</button>
 
-    <button @click.stop="onAdd" class="login-panel__btn ">
-      Добавить
-    </button>
+      <avatar v-show="url" :url="url"></avatar>
 
-    <avatar v-show="url"
-            :url="url"
-    ></avatar>
+      <button @click.stop="onAutoAvatar" class="login-panel__btn ">авто</button>
+    </div>
+
   </div>
 
 </template>
@@ -47,15 +49,12 @@
 
     data() {
       return {
-
         // имя пользователя
         name: '',
         // форма регитсрации юзера
         url:  'https://download-cs.net/steam/avatars/3190.jpg',
 
-        // список аватар
-        // 'https://download-cs.net/steam/avatars/3190.jpg', 3190 - 3452
-
+        burger: false,
       }
     },
 

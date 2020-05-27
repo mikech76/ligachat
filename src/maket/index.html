@@ -16,24 +16,35 @@
   <div class="column">
 
     <div class="login-panel">
-      <div class="col">
+
+      <div class="login-panel__burger"><span></span></div>
+
+      <div class="item">
         <label>Имя:</label>
-        <input type="text"
-               class="login-panel__name"
-               placeholder=""
-        >
+        <input type="text" class="login-panel__name">
       </div>
-      <div class="col">
-        <label>Аватар: </label>
+
+      <div class="item">
+        <label>url: </label>
         <input type="text"
                class="login-panel__url"
                placeholder="URL картинки"
         >
       </div>
 
-      <button class="login-panel__add ">
-        Добавить чат
-      </button>
+      <div class="item">
+        <button class="login-panel__btn ">
+          Добавить
+        </button>
+
+        <div class="avatar">
+          <img alt="" class="avatar__logo" src="../assets/userpics/4.jpg">
+        </div>
+        <button class="login-panel__btn ">
+          авто
+        </button>
+      </div>
+
 
     </div>
     <!-- /.login-panel -->

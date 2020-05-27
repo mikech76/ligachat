@@ -1,5 +1,8 @@
 // панель добавления юзера
+
 .login-panel {
+
+  position: relative;
   flex: 0 1 40px;
   display: flex;
   justify-content: flex-start;
@@ -10,30 +13,143 @@
 
   font-weight: 500;
 
-  margin: 0 4px;
-  padding: 0 4px;
-  min-height: 50px;
+  padding: 4px;
+  height: 50px;
 
-  &__btn {
+  // кнопка меню
+  &__burger {
+    display: none;
+  }
+
+  .item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  button {
     border: 1px solid darken($loginPanelBgColor, 40%);
-
+    border-radius: 5px;
+    font-size: 15px;
+    width: 90px;
     height: 23px;
-    padding: 0 10px;
+    margin: 4px 10px;
   }
 
-  &__url {
-    width: 200px;
-  }
-
-  label, button {
-    margin: 0 5px 0 15px;
+  label {
+    margin: 0 5px;
     border-radius: 5px;
     font-size: 15px;
   }
 
   input {
+    margin: 0 5px;
     height: 23px;
     padding: 3px;
     border-radius: 5px;
+  }
+
+  @media screen and (max-width: $loginPanelSmall) {
+
+    transition: all 0.3s;
+
+    flex-direction: column;
+    flex: 0 1 auto;
+    align-items: stretch;
+    padding: 0 50px 0 0;
+    height: 39px;
+
+    .item {
+      display: none;
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.3s;
+    }
+
+    &.active {
+      height: 100px;
+
+      .item {
+        opacity: 1;
+        transition: all 0.3s;
+        transform: scale(1);
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    label {
+      flex: 1 1 5%;
+      margin: 0 5px;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    input {
+      flex: 1 1 50%;
+      margin: 0 5px;
+      height: 23px;
+      padding: 3px;
+      border-radius: 5px;
+    }
+    // кнопка меню
+    &__burger {
+      display: block;
+      position: absolute;
+      margin: 0 10px 0 5px;
+      height: 20px;
+      width: 22px;
+      right: 0;
+      top: 8px;
+      z-index: 11;
+
+      span {
+        position: absolute;
+        background-color: $bg-color;
+        left: 0;
+        top: 9px;
+        width: 100%;
+        height: 2px;
+        transition: all 0.3s;
+      }
+
+      &:before, &:after {
+        content: '';
+        background-color: $bg-color;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s;
+      }
+
+      &:before {
+        top: 0;
+      }
+
+      &:after {
+        bottom: 0;
+      }
+
+      &.active:before {
+        transform: rotate(45deg);
+        top: 9px;
+      }
+
+      &.active:after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+      }
+
+      &.active span {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+    }
+
+
   }
 }
